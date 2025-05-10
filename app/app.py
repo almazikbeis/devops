@@ -13,6 +13,9 @@ metrics = PrometheusMetrics(app)
 
 from models import Task
 
+with app.app_context():
+    db.create_all()
+
 @app.route("/tasks", methods=["POST"])
 def add_task():
     data = request.get_json()
