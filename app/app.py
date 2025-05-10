@@ -30,4 +30,4 @@ def get_tasks():
     return jsonify([{"id": t.id, "title": t.title} for t in tasks])
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)
