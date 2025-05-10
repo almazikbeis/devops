@@ -32,6 +32,10 @@ jobs:
         run: docker-compose up -d
         working-directory: app
 
+      - name: Check containers
+        run: docker ps 
+        working-directory: app
+
       - name: Wait and Test
         run: |
           sleep 30
