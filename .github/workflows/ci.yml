@@ -32,8 +32,14 @@ jobs:
         run: docker-compose up -d
         working-directory: app
 
+      - name: Check containers
+        run: |
+          sleep 10
+          docker ps 
+        working-directory: app
+
       - name: Wait and Test
         run: |
-          sleep 30
+          sleep 10
           curl http://localhost:5000/tasks
         working-directory: app
