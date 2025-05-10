@@ -22,18 +22,18 @@ jobs:
 
       - name: check directory
         run: ls -l
-        working-directory: python-metrics-app
+        working-directory: app
 
       - name: Build Docker images
         run: docker-compose build
-        working-directory: python-metrics-app
+        working-directory: app
 
       - name: Run containers
         run: docker-compose up -d
-        working-directory: python-metrics-app
+        working-directory: app
 
       - name: Wait and Test
         run: |
           sleep 15
           curl http://localhost:5000
-        working-directory: python-metrics-app
+        working-directory: app
