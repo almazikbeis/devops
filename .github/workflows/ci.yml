@@ -34,6 +34,6 @@ jobs:
 
       - name: Wait and Test
         run: |
-          sleep 15
+          sleep 30
           curl http://localhost:5000/tasks
         working-directory: app
